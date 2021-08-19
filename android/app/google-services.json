@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "781288330127",
+    "project_id": "agricentral-9942f",
+    "storage_bucket": "agricentral-9942f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781288330127:android:be5eb4396bc3796b32f1fa",
+        "android_client_info": {
+          "package_name": "com.example.agricentral"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781288330127-lociavsu08u1cboobf55h0av4kurrfit.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDRr19LUouMDTYm-ULLRhKppjngvVYdqI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781288330127-lociavsu08u1cboobf55h0av4kurrfit.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

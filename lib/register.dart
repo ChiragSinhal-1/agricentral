@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -157,8 +158,11 @@ class _RegisterPageState extends State<RegisterPage> {
                             color: Colors.teal[400],
                             borderRadius: BorderRadius.circular(20)),
                         child: TextButton(
-                          onPressed: () {
+                          onPressed: () async {
                             print("signup Clicked");
+                            await FirebaseFirestore.instance
+                                .collection("Testing")
+                                .add({"Name": "Chirag"});
                             Get.to(() => RegisterPage());
                           },
                           child: Text(
