@@ -1,6 +1,8 @@
+import 'package:agricentral/myDashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -12,6 +14,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController pwdController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -69,61 +72,73 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0, right: 8),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        TextFormField(
-                          decoration: InputDecoration(
-                            icon: Icon(Icons.email,
-                                size: IconTheme.of(context).size,
-                                color: Colors.teal),
-                            labelText: 'E-Mail',
-                            counterText: '',
-                          ),
-                          controller: emailController,
-                          keyboardType: TextInputType.emailAddress,
-                        ),
-                        SizedBox(
-                          height: 16,
-                        ),
-                        TextFormField(
-                          decoration: InputDecoration(
-                            icon: Icon(Icons.lock,
-                                size: IconTheme.of(context).size,
-                                color: Colors.teal),
-                            labelText: 'Password',
-                            counterText: '',
-                          ),
-                          controller: pwdController,
-                          keyboardType: TextInputType.visiblePassword,
-                          obscureText: true,
-                        ),
-                        SizedBox(
-                          height: 30,
-                        ),
-                        new Container(
-                          alignment: Alignment.center,
-                          height: 40,
-                          width: MediaQuery.of(context).size.width / 2,
-                          // color: Colors.green,
-                          decoration: BoxDecoration(
-                              color: Colors.teal[400],
-                              borderRadius: BorderRadius.circular(20)),
-                          child: TextButton(
-                            onPressed: () {
-                              print("object");
-                              Get.to(() => LoginPage());
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          TextFormField(
+                            decoration: InputDecoration(
+                              icon: Icon(Icons.email,
+                                  size: IconTheme.of(context).size,
+                                  color: Colors.teal),
+                              labelText: 'E-Mail',
+                              counterText: '',
+                            ),
+                            validator: (input) {
+                              if (!(input!.contains('@'))) {
+                                return "Please Enter a valid email";
+                              }
                             },
-                            child: Text(
-                              "L O G I N",
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.workSans(
-                                  color: Colors.white, fontSize: 18),
+                            controller: emailController,
+                            keyboardType: TextInputType.emailAddress,
+                          ),
+                          SizedBox(
+                            height: 16,
+                          ),
+                          TextFormField(
+                            decoration: InputDecoration(
+                              icon: Icon(Icons.lock,
+                                  size: IconTheme.of(context).size,
+                                  color: Colors.teal),
+                              labelText: 'Password',
+                              counterText: '',
+                            ),
+                            validator: (input) {
+                              if (input!.length < 6) {
+                                return "your password needs to be atlease 6 characters.";
+                              }
+                            },
+                            controller: pwdController,
+                            keyboardType: TextInputType.visiblePassword,
+                            obscureText: true,
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          new Container(
+                            alignment: Alignment.center,
+                            height: 40,
+                            width: MediaQuery.of(context).size.width / 2,
+                            // color: Colors.green,
+                            decoration: BoxDecoration(
+                                color: Colors.teal[400],
+                                borderRadius: BorderRadius.circular(20)),
+                            child: TextButton(
+                              onPressed: () {
+                                signIn();
+                              },
+                              child: Text(
+                                "L O G I N",
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.workSans(
+                                    color: Colors.white, fontSize: 18),
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -133,5 +148,49 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  Future<void> signIn() async {
+    final formState = _formKey.currentState;
+    if (formState!.validate()) {
+      formState.save();
+      try {
+        await FirebaseAuth.instance.signInWithEmailAndPassword(
+            email: emailController.text.trim(),
+            password: pwdController.text.trim());
+      } catch (e) {
+        AlertDialog alert = AlertDialog(
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Wrong Credentials!!!",
+                style: TextStyle(color: Colors.red, fontSize: 20),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Text(
+                "Please check your email and password again.",
+                style: TextStyle(fontSize: 17),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+                onPressed: () {
+                  Get.to(() => LoginPage());
+                  Navigator.of(context).pop();
+                },
+                child: Text("Ok")),
+          ],
+        );
+        showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return alert;
+            });
+      }
+    }
   }
 }

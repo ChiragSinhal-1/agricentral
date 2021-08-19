@@ -76,33 +76,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ],
                 ),
-                // SizedBox(
-                //   height: 10,
-                // ),
-                // Text(
-                //   "hello there!",
-                //   // textAlign: TextAlign.start,
-                //   style: GoogleFonts.comfortaa(
-                //     fontSize: 45,
-                //     color: Color(0xff29AB87),
-                //     fontWeight: FontWeight.bold,
-                //   ),
-                // ),
-                // SizedBox(
-                //   height: 18,
-                // ),
-
-                // SizedBox(
-                //   height: 48,
-                // ),
                 Image(
                   image: AssetImage('undraw_welcome_cats_thqn.png'),
                   fit: BoxFit.scaleDown,
                   height: MediaQuery.of(context).size.height / 3.5,
                 ),
-                // SizedBox(
-                //   height: 32,
-                // ),
                 Container(
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
