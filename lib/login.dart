@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -15,6 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController pwdController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  late SharedPreferences sharedPreferences;
 
   @override
   Widget build(BuildContext context) {
@@ -126,7 +128,11 @@ class _LoginPageState extends State<LoginPage> {
                                 color: Colors.teal[400],
                                 borderRadius: BorderRadius.circular(20)),
                             child: TextButton(
-                              onPressed: () {
+                              onPressed: () async {
+                                final SharedPreferences sharedPreferences =
+                                    await SharedPreferences.getInstance();
+                                sharedPreferences.setString(
+                                    'email', emailController.text);
                                 signIn();
                               },
                               child: Text(
@@ -158,6 +164,8 @@ class _LoginPageState extends State<LoginPage> {
         await FirebaseAuth.instance.signInWithEmailAndPassword(
             email: emailController.text.trim(),
             password: pwdController.text.trim());
+
+        Get.off(() => MyDashboardPage());
       } catch (e) {
         AlertDialog alert = AlertDialog(
           title: Column(
@@ -179,7 +187,10 @@ class _LoginPageState extends State<LoginPage> {
           actions: [
             TextButton(
                 onPressed: () {
-                  Get.to(() => LoginPage());
+                  setState(() {
+                    Get.to(() => LoginPage());
+                  });
+
                   Navigator.of(context).pop();
                 },
                 child: Text("Ok")),

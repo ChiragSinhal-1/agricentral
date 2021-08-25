@@ -1,5 +1,8 @@
+import 'package:agricentral/cropHealth.dart';
+import 'package:agricentral/myDashboard.dart';
+import 'package:agricentral/userProfile.dart';
+import 'package:agricentral/userProfile_page/user_profile.dart';
 import 'package:firebase_core/firebase_core.dart';
-
 import 'register.dart';
 import 'login.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +26,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      home: MyHomePage(title: 'Welcome to AgriCentral'),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => LoginPage(),
+        '/dashboard': (context) => MyDashboardPage(),
+        '/userProfile': (context) => ProfilePage(),
+        '/cropHealth': (context) => CropHealthPage()
+      },
     );
   }
 }

@@ -1,13 +1,9 @@
-import 'dart:ffi';
-
 import 'package:agricentral/main.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'myDashboard.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -228,6 +224,7 @@ class _RegisterPageState extends State<RegisterPage> {
             email: emailController.text, password: pwdController.text);
 
         Navigator.of(context).pop();
+        Get.off(() => MyHomePage(title: "AgriCentral"));
       } catch (e) {
         AlertDialog alert = AlertDialog(
           title: Column(
