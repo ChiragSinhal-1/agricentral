@@ -1,5 +1,6 @@
 import 'package:agricentral/cropHealth.dart';
 import 'package:agricentral/login.dart';
+import 'package:agricentral/main.dart';
 import 'package:agricentral/myDashboard.dart';
 import 'package:agricentral/userProfile.dart';
 import 'package:agricentral/userProfile_page/user_profile.dart';
@@ -189,7 +190,9 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               leading: new Icon(Icons.logout, color: Colors.red),
               onTap: () async {
                 await FirebaseAuth.instance.signOut();
-                Get.offAll(LoginPage());
+                Get.offAll(MyHomePage(
+                  title: "",
+                ));
               },
             ),
           ],

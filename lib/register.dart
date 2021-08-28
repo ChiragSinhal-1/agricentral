@@ -12,6 +12,12 @@ class RegisterPage extends StatefulWidget {
   _RegisterPageState createState() => _RegisterPageState();
 }
 
+class ListItem {
+  var value;
+  String name;
+  ListItem(this.value, this.name);
+}
+
 class _RegisterPageState extends State<RegisterPage> {
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
@@ -19,6 +25,12 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController rePwdController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  String _userType = 'farmer';
+  List<ListItem> _dropdownItemsUserType = [
+    ListItem('farmer', "farmer"),
+    ListItem('transport', "transport"),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -178,6 +190,34 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                         SizedBox(
                           height: 40,
+                        ),
+                        Text("Select User type"),
+                        Container(
+                          padding: EdgeInsets.all(20),
+                          child: DropdownButton(
+                            hint: Text("Select User type"),
+                            elevation: 8,
+                            style: TextStyle(color: Colors.black, fontSize: 16),
+                            icon: Icon(Icons.arrow_drop_down_circle),
+                            iconDisabledColor: Colors.grey,
+                            iconEnabledColor: Colors.teal,
+                            isExpanded: true,
+                            dropdownColor: Colors.teal,
+                            value: _userType,
+                            items: _dropdownItemsUserType.map((ListItem item) {
+                              return DropdownMenuItem<String>(
+                                child: Text(
+                                  item.name,
+                                ),
+                                value: item.value,
+                              );
+                            }).toList(),
+                            onChanged: (value) {
+                              setState(() {
+                                _userType = value.toString();
+                              });
+                            },
+                          ),
                         ),
                         new Container(
                           alignment: Alignment.center,
