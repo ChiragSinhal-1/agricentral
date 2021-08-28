@@ -2,6 +2,7 @@ import 'package:agricentral/cropHealth.dart';
 import 'package:agricentral/login.dart';
 import 'package:agricentral/myDashboard.dart';
 import 'package:agricentral/userProfile.dart';
+import 'package:agricentral/userProfile_page/user_profile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -40,13 +41,13 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           children: <Widget>[
             new UserAccountsDrawerHeader(
               currentAccountPicture: new GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Get.to(() => ProfilePage());
+                },
                 child: new CircleAvatar(
                   backgroundColor: Colors.black,
-                  child: Icon(
-                    Icons.person,
-                    color: Colors.white,
-                  ),
+                  backgroundImage:
+                      AssetImage('zoe-schaeffer-eoAubhPm6H8-unsplash.jpeg'),
                 ),
               ),
               accountName: new Text(
@@ -63,9 +64,9 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               decoration: new BoxDecoration(
                 image: new DecorationImage(
                   image: new AssetImage(
-                    "undraw_before_dawn_bqrj.png",
+                    "undraw_Country_side_k696.png",
                   ),
-                  fit: BoxFit.fill,
+                  fit: BoxFit.scaleDown,
                 ),
               ),
               onDetailsPressed: () {},
@@ -80,7 +81,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               ),
               leading: new Icon(
                 Icons.dashboard,
-                color: Colors.black,
+                color: Colors.teal[900],
               ),
               onTap: () {
                 Navigator.of(context).pop();
@@ -89,13 +90,44 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             ),
             new ListTile(
               title: new Text(
-                "Reservation",
+                "My Crops",
                 style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: 20),
               ),
-              leading: new Icon(Icons.add_chart, color: Colors.black),
+              leading: new Icon(
+                Icons.agriculture,
+                color: Colors.teal[900],
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Get.to(() => MyDashboardPage());
+              },
+            ),
+            new ListTile(
+              title: new Text(
+                "Crop Catalog",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
+              ),
+              leading: new Icon(Icons.book, color: Colors.teal[900]),
+              onTap: () {
+                Navigator.of(context).pop();
+                Get.to(() => CropHealthPage());
+              },
+            ),
+            new ListTile(
+              title: new Text(
+                "Market",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
+              ),
+              leading: new Icon(Icons.add_chart, color: Colors.teal[900]),
               onTap: () {
                 Navigator.of(context).pop();
                 Get.to(() => UserProfilePage());
@@ -103,16 +135,46 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             ),
             new ListTile(
               title: new Text(
-                "Crop Health",
+                "Transport",
                 style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: 20),
               ),
-              leading: new Icon(Icons.add_chart, color: Colors.black),
+              leading: new Icon(Icons.transfer_within_a_station,
+                  color: Colors.teal[900]),
               onTap: () {
                 Navigator.of(context).pop();
-                Get.to(() => CropHealthPage());
+                Get.to(() => UserProfilePage());
+              },
+            ),
+            new ListTile(
+              title: new Text(
+                "Notifications",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
+              ),
+              leading: new Icon(Icons.notifications_active_rounded,
+                  color: Colors.teal[900]),
+              onTap: () {
+                Navigator.of(context).pop();
+                Get.to(() => UserProfilePage());
+              },
+            ),
+            new ListTile(
+              title: new Text(
+                "Agri Scanner",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
+              ),
+              leading: new Icon(Icons.scanner_rounded, color: Colors.teal[900]),
+              onTap: () {
+                Navigator.of(context).pop();
+                Get.to(() => UserProfilePage());
               },
             ),
             new Divider(),
@@ -124,7 +186,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                     fontWeight: FontWeight.bold,
                     fontSize: 20),
               ),
-              leading: new Icon(Icons.logout, color: Colors.black),
+              leading: new Icon(Icons.logout, color: Colors.red),
               onTap: () async {
                 await FirebaseAuth.instance.signOut();
                 Get.offAll(LoginPage());

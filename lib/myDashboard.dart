@@ -17,11 +17,10 @@ class _MyDashboardPageState extends State<MyDashboardPage> {
       onWillPop: _onBackPressed,
       child: Container(
         decoration: BoxDecoration(
-          gradient:
-              LinearGradient(colors: [Color(0xff0D5265), Color(0xff7FF9E2)]),
+          gradient: LinearGradient(colors: [Colors.tealAccent, Colors.teal]),
         ),
         child: Scaffold(
-          backgroundColor: Color(0xff7FF9E2),
+          backgroundColor: Colors.transparent,
           appBar: AppBar(
             title: Text("Dashboard"),
             centerTitle: true,
@@ -35,20 +34,19 @@ class _MyDashboardPageState extends State<MyDashboardPage> {
               mainAxisSpacing: 12,
               padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
               children: <Widget>[
-                MyItems(Icons.all_inbox_rounded, "User Profile", 0xffFF8300,
-                    "/userProfile"),
-                MyItems(Icons.album_rounded, "Crop Health", 0xffCB4C4E,
-                    '/cropHealth'),
+                MyItems(
+                    Icons.person, "User Profile", 0xffFFA500, "/userProfile"),
+                MyItems(Icons.book, "Crop Catalog", 0xff013220, '/cropHealth'),
 
-                MyItems(Icons.person, "My Crops", 0xff0D5265, "/myResource"),
+                MyItems(Icons.person, "My Crops", 0xff1c2e4a, "/myResource"),
                 MyItems(Icons.notifications_active_rounded, "Notifications",
                     0xff01a982, '/notification'),
 
-                MyItems(Icons.location_on_rounded, "Map", 0xffFF8300, '/map'),
+                MyItems(Icons.location_on_rounded, "Map", 0xffFFA500, '/map'),
                 MyItems(Icons.qr_code_scanner_rounded, "Agri Scanner",
-                    0xff0D5265, '/scannerPage'),
+                    0xff1c2e4a, '/scannerPage'),
                 MyItems(Icons.design_services_rounded, "Raise transport ticket",
-                    0xffFEC901, '/serviceTicket'),
+                    0xffF4BC1C, '/serviceTicket'),
 
                 // MyItems(Icons.power_settings_new_rounded,"Active Servers",0xff01a982),
               ],
