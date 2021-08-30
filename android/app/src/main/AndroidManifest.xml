@@ -4,6 +4,8 @@
    <application
         android:label="agricentral"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyCDRr19LUouMDTYm-ULLRhKppjngvVYdqI"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

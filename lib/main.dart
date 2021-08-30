@@ -1,4 +1,5 @@
 import 'package:agricentral/cropHealth.dart';
+import 'package:agricentral/map.dart';
 import 'package:agricentral/myDashboard.dart';
 import 'package:agricentral/userProfile.dart';
 import 'package:agricentral/userProfile_page/user_profile.dart';
@@ -31,7 +32,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => MyHomePage(title: ""),
         '/dashboard': (context) => MyDashboardPage(),
         '/userProfile': (context) => ProfilePage(),
-        '/cropHealth': (context) => CropHealthPage()
+        '/cropHealth': (context) => CropHealthPage(),
+        '/map': (context) => ResourceLocatorMap()
       },
     );
   }
