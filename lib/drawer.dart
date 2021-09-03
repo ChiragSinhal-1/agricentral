@@ -1,9 +1,8 @@
 import 'package:agricentral/cropHealth.dart';
-import 'package:agricentral/login.dart';
 import 'package:agricentral/main.dart';
+import 'package:agricentral/map.dart';
 import 'package:agricentral/myCrops.dart';
 import 'package:agricentral/myDashboard.dart';
-import 'package:agricentral/userProfile.dart';
 import 'package:agricentral/userProfile_page/user_profile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -132,7 +131,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               leading: new Icon(Icons.add_chart, color: Colors.teal[900]),
               onTap: () {
                 Navigator.of(context).pop();
-                Get.to(() => UserProfilePage());
+                Get.to(() => ResourceLocatorMap());
               },
             ),
             new ListTile(
@@ -147,7 +146,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   color: Colors.teal[900]),
               onTap: () {
                 Navigator.of(context).pop();
-                Get.to(() => UserProfilePage());
+                Get.to(() => ProfilePage());
               },
             ),
             new ListTile(
@@ -162,7 +161,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   color: Colors.teal[900]),
               onTap: () {
                 Navigator.of(context).pop();
-                Get.to(() => UserProfilePage());
+                Get.to(() => ProfilePage());
               },
             ),
             new ListTile(
@@ -176,7 +175,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               leading: new Icon(Icons.scanner_rounded, color: Colors.teal[900]),
               onTap: () {
                 Navigator.of(context).pop();
-                Get.to(() => UserProfilePage());
+                Get.to(() => ProfilePage());
               },
             ),
             new Divider(),

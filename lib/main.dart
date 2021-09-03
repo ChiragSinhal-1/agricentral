@@ -2,7 +2,6 @@ import 'package:agricentral/cropHealth.dart';
 import 'package:agricentral/map.dart';
 import 'package:agricentral/myCrops.dart';
 import 'package:agricentral/myDashboard.dart';
-import 'package:agricentral/userProfile.dart';
 import 'package:agricentral/userProfile_page/user_profile.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'register.dart';
