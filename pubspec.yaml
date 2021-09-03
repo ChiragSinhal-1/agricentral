@@ -58,6 +58,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - undraw_Environmental_study_re_q4q8.png
     - undraw_welcome_cats_thqn.png
     - logo.png
     - undraw_Access_account_re_8spm.png
