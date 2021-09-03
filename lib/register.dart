@@ -1,4 +1,5 @@
 import 'package:agricentral/main.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -230,6 +231,15 @@ class _RegisterPageState extends State<RegisterPage> {
                           child: TextButton(
                             onPressed: () async {
                               print("signup Clicked");
+                              await FirebaseFirestore.instance
+                                  .collection("Users")
+                                  .doc(emailController.text)
+                                  .set({
+                                "Name": nameController.text,
+                                "Mobile Number": phoneController.text,
+                                "Email": emailController.text,
+                                "User Type": _userType
+                              });
                               await signUp();
                             },
                             child: Text(

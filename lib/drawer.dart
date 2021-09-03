@@ -1,6 +1,7 @@
 import 'package:agricentral/cropHealth.dart';
 import 'package:agricentral/login.dart';
 import 'package:agricentral/main.dart';
+import 'package:agricentral/myCrops.dart';
 import 'package:agricentral/myDashboard.dart';
 import 'package:agricentral/userProfile.dart';
 import 'package:agricentral/userProfile_page/user_profile.dart';
@@ -103,7 +104,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               ),
               onTap: () {
                 Navigator.of(context).pop();
-                Get.to(() => MyDashboardPage());
+                Get.to(() => MyCropPage());
               },
             ),
             new ListTile(

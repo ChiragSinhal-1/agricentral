@@ -1,5 +1,6 @@
 import 'package:agricentral/cropHealth.dart';
 import 'package:agricentral/map.dart';
+import 'package:agricentral/myCrops.dart';
 import 'package:agricentral/myDashboard.dart';
 import 'package:agricentral/userProfile.dart';
 import 'package:agricentral/userProfile_page/user_profile.dart';
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget {
         '/dashboard': (context) => MyDashboardPage(),
         '/userProfile': (context) => ProfilePage(),
         '/cropHealth': (context) => CropHealthPage(),
-        '/map': (context) => ResourceLocatorMap()
+        '/map': (context) => ResourceLocatorMap(),
+        '/myCrops': (context) => MyCropPage()
       },
     );
   }

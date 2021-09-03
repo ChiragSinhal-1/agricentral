@@ -38,7 +38,7 @@ class _MyDashboardPageState extends State<MyDashboardPage> {
                     Icons.person, "User Profile", 0xffFFA500, "/userProfile"),
                 MyItems(Icons.book, "Crop Catalog", 0xff013220, '/cropHealth'),
 
-                MyItems(Icons.person, "My Crops", 0xff1c2e4a, "/myResource"),
+                MyItems(Icons.person, "My Crops", 0xff1c2e4a, "/myCrops"),
                 MyItems(Icons.notifications_active_rounded, "Notifications",
                     0xff01a982, '/notification'),
 
