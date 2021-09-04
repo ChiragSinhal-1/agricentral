@@ -1,6 +1,7 @@
 import 'package:agricentral/cropHealth.dart';
 import 'package:agricentral/main.dart';
 import 'package:agricentral/map.dart';
+import 'package:agricentral/muOrders.dart';
 import 'package:agricentral/myCrops.dart';
 import 'package:agricentral/myDashboard.dart';
 import 'package:agricentral/supplyChain.dart';
@@ -105,6 +106,23 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               onTap: () {
                 Navigator.of(context).pop();
                 Get.to(() => MyCropPage());
+              },
+            ),
+            new ListTile(
+              title: new Text(
+                "My Orders",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
+              ),
+              leading: new Icon(
+                Icons.list,
+                color: Colors.teal[900],
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Get.to(() => MyOrdersPage());
               },
             ),
             new ListTile(

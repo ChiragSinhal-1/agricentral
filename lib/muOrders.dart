@@ -132,7 +132,7 @@ class _MyOrdersPageState extends State<MyOrdersPage> {
                                         ),
                                       ),
                                       onTap: () {
-                                        Get.to(() => OrderStatus());
+                                        Get.to(() => OrderStatus(document));
                                       },
                                     ),
                                   ),

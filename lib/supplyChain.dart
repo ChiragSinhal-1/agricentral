@@ -248,8 +248,7 @@ class _RaiseTransportRequestState extends State<RaiseTransportRequest> {
                                   .collection("Transport Request")
                                   .doc(username)
                                   .collection("Crops")
-                                  .doc(_crops)
-                                  .set({
+                                  .add({
                                 // "Name": nameController.text,
                                 "Mobile Number": phoneController.text,
                                 "Email": username,
@@ -261,7 +260,10 @@ class _RaiseTransportRequestState extends State<RaiseTransportRequest> {
                                 "Order Delivered": "False",
                                 "Total Weight": weightController.text,
                                 "Pickup Location": picupLocationController.text,
-                                "Destination": dropLocationController.text
+                                "Destination": dropLocationController.text,
+                                "Expected Delivery": "9 Days",
+                                "Total Cost": 1000,
+                                "order status": "pending"
                               });
                               Get.offAll(() => MyOrdersPage());
                             },
