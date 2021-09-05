@@ -28,3 +28,7 @@ The objective of the proposed engineered solution is to build a secure, tamper p
 6. The document scanner feature in the application will help the farmers and transporters automate the process of feeding the data into the database reducing delay and provide ease to each individual.
 7. The notification integration with the application will keep the farmers updated will all the news and status regarding the orders placed by them.
 8. Introduced the “Agricoin” concept as a reward for farmers to avoid following any different or non official channel for buying and selling crops.
+
+## Run AgriCentral (android apk)
+[click to download the apk](https://github.com/ChiragSinhal-1/agricentral/raw/chirag/AgriCentral%20APK/app-release.apk)
+
