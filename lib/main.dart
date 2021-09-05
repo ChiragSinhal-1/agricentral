@@ -85,11 +85,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     Padding(
                       padding: const EdgeInsets.only(left: 40.0, right: 20),
                       child: Text(
-                        "This is an application to improve the quality of agri farms",
+                        "An enhanced agricultural supply chain and data transparency system for the efficient use of farm resources post harvest across the country.",
                         style: GoogleFonts.poppins(
                             fontSize: 15,
                             color: Color(0xff152238),
-                            fontWeight: FontWeight.bold),
+                            fontWeight: FontWeight.normal),
                       ),
                     ),
                   ],
