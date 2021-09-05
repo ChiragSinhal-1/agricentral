@@ -46,7 +46,7 @@ class _CompleteOrderDetailsState extends State<CompleteOrderDetails> {
                     style: TextStyle(fontSize: 20),
                   ),
                   leading: Icon(
-                    Icons.power_settings_new_rounded,
+                    Icons.approval_rounded,
                     color: Colors.red,
                   ),
                 ),
@@ -60,7 +60,7 @@ class _CompleteOrderDetailsState extends State<CompleteOrderDetails> {
                     style: TextStyle(fontSize: 20),
                   ),
                   leading: Icon(
-                    Icons.room_rounded,
+                    Icons.task_rounded,
                     color: Colors.teal[600],
                   ),
                 ),
@@ -74,7 +74,7 @@ class _CompleteOrderDetailsState extends State<CompleteOrderDetails> {
                     style: TextStyle(fontSize: 20),
                   ),
                   leading: Icon(
-                    Icons.person,
+                    Icons.done_all_rounded,
                     color: Colors.teal[600],
                   ),
                 ),
@@ -88,7 +88,7 @@ class _CompleteOrderDetailsState extends State<CompleteOrderDetails> {
                     style: TextStyle(fontSize: 20),
                   ),
                   leading: Icon(
-                    Icons.settings_system_daydream_rounded,
+                    Icons.location_city_rounded,
                     color: Colors.teal[600],
                   ),
                 ),
@@ -102,7 +102,7 @@ class _CompleteOrderDetailsState extends State<CompleteOrderDetails> {
                     style: TextStyle(fontSize: 20),
                   ),
                   leading: Icon(
-                    Icons.settings_system_daydream_rounded,
+                    Icons.pin_drop_rounded,
                     color: Colors.teal[600],
                   ),
                 ),
@@ -118,7 +118,7 @@ class _CompleteOrderDetailsState extends State<CompleteOrderDetails> {
                     ),
                   ),
                   leading: Icon(
-                    Icons.storage_rounded,
+                    Icons.calendar_today_rounded,
                     color: Colors.teal[600],
                   ),
                 ),
@@ -135,7 +135,7 @@ class _CompleteOrderDetailsState extends State<CompleteOrderDetails> {
                     ),
                   ),
                   leading: Icon(
-                    Icons.stop_circle_rounded,
+                    Icons.monitor_weight_rounded,
                     color: Colors.teal[600],
                   ),
                 ),
@@ -152,7 +152,7 @@ class _CompleteOrderDetailsState extends State<CompleteOrderDetails> {
                     ),
                   ),
                   leading: Icon(
-                    Icons.stop_circle_rounded,
+                    Icons.price_check_rounded,
                     color: Colors.teal[600],
                   ),
                 ),
@@ -167,7 +167,7 @@ class _CompleteOrderDetailsState extends State<CompleteOrderDetails> {
                     ),
                   ),
                   leading: Icon(
-                    Icons.stop_circle_rounded,
+                    Icons.payment_rounded,
                     color: Colors.teal[600],
                   ),
                 ),

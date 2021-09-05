@@ -40,13 +40,13 @@ class _MyDashboardPageState extends State<MyDashboardPage> {
 
                 MyItems(Icons.person, "My Crops", 0xff1c2e4a, "/myCrops"),
                 MyItems(Icons.notifications_active_rounded, "Notifications",
-                    0xff01a982, '/notification'),
+                    0xff008080, '/notification'),
 
                 MyItems(Icons.location_on_rounded, "Map", 0xffFFA500, '/map'),
                 MyItems(Icons.qr_code_scanner_rounded, "Agri Scanner",
-                    0xff1c2e4a, '/scannerPage'),
+                    0xff1c2e4a, '/workInProgress'),
                 MyItems(Icons.design_services_rounded, "Raise transport ticket",
-                    0xffF4BC1C, '/serviceTicket'),
+                    0xffF4BC1C, '/transportRequest'),
 
                 // MyItems(Icons.power_settings_new_rounded,"Active Servers",0xff01a982),
               ],

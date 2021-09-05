@@ -1,3 +1,4 @@
+import 'package:agricentral/myCrops.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:agricentral/userProfile_model/user.dart';
@@ -6,6 +7,7 @@ import 'package:agricentral/user_profile_widgets/appbar.dart';
 import 'package:agricentral/user_profile_widgets/button_widget.dart';
 import 'package:agricentral/user_profile_widgets/numbers_widget.dart';
 import 'package:agricentral/user_profile_widgets/profile_widgets.dart';
+import 'package:get/get.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -54,8 +56,10 @@ class _ProfilePageState extends State<ProfilePage> {
       );
 
   Widget buildUpgradeButton() => ButtonWidget(
-        text: 'Upgrade To PRO',
-        onClicked: () {},
+        text: 'My Crops',
+        onClicked: () {
+          Get.to(() => MyCropPage());
+        },
       );
 
   Widget buildAbout(User user) => Container(

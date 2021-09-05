@@ -39,6 +39,9 @@ dependencies:
   dio:
   flutter_polyline_points:
   google_maps_flutter:
+  csv:
+  permission_handler:
+  image_picker:
 
 
 dev_dependencies:

@@ -1,11 +1,16 @@
+import 'package:agricentral/myCrops.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class NumbersWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          buildButton(context, '4', 'Crops'),
+          InkWell(
+            child: buildButton(context, '4', 'Crops'),
+            onTap: () => Get.to(() => MyCropPage()),
+          ),
           buildDivider(),
           buildButton(context, '3', 'About to Cultivate'),
           buildDivider(),

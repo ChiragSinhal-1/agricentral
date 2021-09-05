@@ -45,7 +45,7 @@ class _MyCropDetailPageState extends State<MyCropDetailPage> {
                     style: TextStyle(fontSize: 20),
                   ),
                   leading: Icon(
-                    Icons.power_settings_new_rounded,
+                    Icons.landscape_rounded,
                     color: Colors.red,
                   ),
                 ),
@@ -59,7 +59,7 @@ class _MyCropDetailPageState extends State<MyCropDetailPage> {
                     style: TextStyle(fontSize: 20),
                   ),
                   leading: Icon(
-                    Icons.room_rounded,
+                    Icons.shopping_basket,
                     color: Colors.teal[600],
                   ),
                 ),
@@ -72,7 +72,7 @@ class _MyCropDetailPageState extends State<MyCropDetailPage> {
                     style: TextStyle(fontSize: 20),
                   ),
                   leading: Icon(
-                    Icons.person,
+                    Icons.price_check_rounded,
                     color: Colors.teal[600],
                   ),
                 ),
@@ -86,7 +86,7 @@ class _MyCropDetailPageState extends State<MyCropDetailPage> {
                     style: TextStyle(fontSize: 20),
                   ),
                   leading: Icon(
-                    Icons.settings_system_daydream_rounded,
+                    Icons.price_check_rounded,
                     color: Colors.teal[600],
                   ),
                 ),
@@ -100,7 +100,7 @@ class _MyCropDetailPageState extends State<MyCropDetailPage> {
                     style: TextStyle(fontSize: 20),
                   ),
                   leading: Icon(
-                    Icons.settings_system_daydream_rounded,
+                    Icons.price_check_rounded,
                     color: Colors.teal[600],
                   ),
                 ),
@@ -116,7 +116,7 @@ class _MyCropDetailPageState extends State<MyCropDetailPage> {
                     ),
                   ),
                   leading: Icon(
-                    Icons.storage_rounded,
+                    Icons.lock_clock_rounded,
                     color: Colors.teal[600],
                   ),
                 ),
@@ -131,7 +131,7 @@ class _MyCropDetailPageState extends State<MyCropDetailPage> {
                     ),
                   ),
                   leading: Icon(
-                    Icons.stop_circle_rounded,
+                    Icons.date_range_rounded,
                     color: Colors.teal[600],
                   ),
                 ),

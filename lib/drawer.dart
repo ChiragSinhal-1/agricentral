@@ -4,8 +4,10 @@ import 'package:agricentral/map.dart';
 import 'package:agricentral/muOrders.dart';
 import 'package:agricentral/myCrops.dart';
 import 'package:agricentral/myDashboard.dart';
+import 'package:agricentral/notification.dart';
 import 'package:agricentral/supplyChain.dart';
 import 'package:agricentral/userProfile_page/user_profile.dart';
+import 'package:agricentral/workInProgress.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -180,7 +182,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   color: Colors.teal[900]),
               onTap: () {
                 Navigator.of(context).pop();
-                Get.to(() => ProfilePage());
+                Get.to(() => notificationPage());
               },
             ),
             new ListTile(
@@ -194,7 +196,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               leading: new Icon(Icons.scanner_rounded, color: Colors.teal[900]),
               onTap: () {
                 Navigator.of(context).pop();
-                Get.to(() => ProfilePage());
+                Get.to(() => WorkInProgress());
               },
             ),
             new Divider(),

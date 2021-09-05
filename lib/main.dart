@@ -2,7 +2,10 @@ import 'package:agricentral/cropHealth.dart';
 import 'package:agricentral/map.dart';
 import 'package:agricentral/myCrops.dart';
 import 'package:agricentral/myDashboard.dart';
+import 'package:agricentral/notification.dart';
+import 'package:agricentral/supplyChain.dart';
 import 'package:agricentral/userProfile_page/user_profile.dart';
+import 'package:agricentral/workInProgress.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'register.dart';
 import 'login.dart';
@@ -34,7 +37,10 @@ class MyApp extends StatelessWidget {
         '/userProfile': (context) => ProfilePage(),
         '/cropHealth': (context) => CropHealthPage(),
         '/map': (context) => ResourceLocatorMap(),
-        '/myCrops': (context) => MyCropPage()
+        '/myCrops': (context) => MyCropPage(),
+        '/notification': (context) => notificationPage(),
+        '/workInProgress': (context) => WorkInProgress(),
+        '/transportRequest': (context) => RaiseTransportRequest()
       },
     );
   }
